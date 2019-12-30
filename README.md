@@ -84,3 +84,17 @@ public void sendMsg(){
 
 需要使用@EnableRabbit与@RabbitListener
 
+
+```java
+
+@Service
+public class BookService {
+
+    @RabbitListener(queues = "")
+    public void receive(Book book){
+        System.out.println("收到消息: " + book);
+    }
+}
+
+```
+
